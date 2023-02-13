@@ -12,8 +12,9 @@ class Halaman extends CI_Controller {
 		// $this->load->database(); sudah diwakilkan oleh autoload.php
 		// $this->load->model('Karyawan_model');
 
-		$data['dataKaryawan'] = $this->Karyawan_model->semua()->row();
+		$data['dataKaryawan'] = $this->Karyawan_model->semua()->row(); //untuk mengambil data 
 
 		$this->load->view('tampilanSaya', $data);
+
 	}
 }
