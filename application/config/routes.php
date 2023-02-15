@@ -52,3 +52,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'halaman/tampil'; // ini menampilkan halaman pertama kali
 $route['404_override'] = 'orang/nyasar'; //membuat error sendiri
 $route['translate_uri_dashes'] = FALSE; //penamaan url untuk dash(-)
+
+$route['register'] = 'user/register';
+$route['register/proses'] = 'user/prosesRegister';
+$route['login'] = 'user/login';
+
+
