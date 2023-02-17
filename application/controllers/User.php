@@ -10,15 +10,21 @@ class User extends CI_Controller{
     }
 
     public function register(){
+        if($this->session->userdata('logged_in')){ //utk proteksi user yg sudah login
+            redirect('dashboard');
+        }
 
         $data['title'] = "Daftar";
 
-        $this->load->view('template/header', $data);
-		$this->load->view('register', $data);
-		$this->load->view('template/footer', $data);
+        $this->load->view('template/home/header', $data);
+		$this->load->view('pages/register', $data);
     }
 
     public function prosesRegister(){
+        if($this->session->userdata('logged_in')){ //utk proteksi user yg sudah login
+            redirect('dashboard');
+        }
+
         $this->form_validation->set_rules('nama_depan', 'Nama Depan', 'required');
         $this->form_validation->set_rules('nama_belakang', 'Nama Belakang', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[karyawan.email]');
@@ -49,7 +55,7 @@ class User extends CI_Controller{
                              'diganti'          =>date('Y-m-d H:i:s'),
                              'status'           =>'inteview'];
                              
-            $this->User_model->create($dataRegister); 
+            $this->User_model->create($dataRegister); //user dibuat masuk ke database
             
             //akan berhasil jika sukses register
             $dataPesan = ['pesan' => 'Selamat! akun berhasil dibuat',
@@ -62,14 +68,21 @@ class User extends CI_Controller{
     }
 
     public function login(){
+        if($this->session->userdata('logged_in')){ //utk proteksi user yg sudah login
+            redirect('dashboard');
+        }
+
         $data['title'] = "Login";
 
-        $this->load->view('template/header', $data);
-		$this->load->view('login', $data);
-		$this->load->view('template/footer', $data);
+        $this->load->view('template/home/header', $data);
+		$this->load->view('pages/login', $data);
     }
 
     public function prosesLogin(){
+        if($this->session->userdata('logged_in')){ //utk proteksi user yg sudah login
+            redirect('dashboard');
+        }
+
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
 
@@ -92,11 +105,19 @@ class User extends CI_Controller{
                redirect('dashboard'); //mengarah ke halaman dashboard
             
             }else{
-                $dataPesan = ['pesan' => 'Akun tidak terdaftar!',
+                $dataPesan = ['pesan' => 'Akun tidak terdaftar!, gagal login',
                               'alert' => 'alert-danger'];
                 $this->session->set_flashdata($dataPesan); //hanya sekali dipanggil then dihancurkan
                 $this->login();
             }
         }
+    }
+
+    public function logout(){
+        $dataLogin = ['logged_in', 'user_id', 'nama_depan', 'nama_belakang'];
+
+        $this->session->unset_userdata($dataLogin); //menghancurkan session userdata yg aktif
+
+        redirect('login');
     }
 }

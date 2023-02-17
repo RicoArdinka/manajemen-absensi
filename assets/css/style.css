@@ -1,0 +1,7 @@
+/* HALAMAN */
+@import 'halaman/akses.css';
+
+/* KOMPONEN */
+@import 'komponen/form.css';
+@import 'komponen/header.css';
+@import 'komponen/main.css';

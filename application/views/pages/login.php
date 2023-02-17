@@ -1,21 +1,21 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Sistem Perusahaan Colcom</h2>
-            <h3>Pengelolaan Karyawan & digital absensi</h3>
+    <div class="row h-75 align-items-center">
+        <div class="col-md-7">
+            <h2 class="title-register">Sistem Perusahaan Colcom</h2>
+            <h3 class="title-register">Pengelolaan Karyawan & digital absensi</h3>
 
             <div class="akses-button">
                 <?php
-
-                    $dataAnchor = ['class' => 'btn btn-outline-primary'];
-
-                    // echo anchor('user/login', 'LOGIN', $dataAnchor);
-                    echo anchor('user/register', 'DAFTAR', $dataAnchor);
+                    $dataAnchor = ['class' => 'btn btn-outline-primary mr-2 active'];
+                    echo anchor('login', 'LOGIN', $dataAnchor);
+                    
+                    $dataAnchor = ['class' => 'btn btn-outline-primary mr-2'];
+                    echo anchor('register', 'DAFTAR', $dataAnchor);
                 ?>
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="card frame-form-colcom">
                 <div class="card-header">Login</div>
                 <div class="card-body">
