@@ -2,7 +2,7 @@
     <!-- ini tampilan untuk sebelah kiri -->
     <nav id="sidebar" class="bg-dark">
         <ul class="menu">
-            <li><?= anchor('dashboard', 'Dashboard'); ?></li>
+            <li class="<?php echo menuAktif('dashboard'); ?>" ><?= anchor('dashboard', 'Dashboard'); ?></li>
             <li><?= anchor('dashboard/karyawan', 'Karyawan'); ?></li>
             <li><?= anchor('dashboard/gaji-dan-tunjangan', 'Gaji & Tunjangan'); ?></li>
             <li><?= anchor('dashboard/absensi', 'Absensi'); ?></li>
@@ -30,6 +30,7 @@
         </nav>
 
         <div class="container-fluid">
+            <?php echo $this->router->fetch_class(); //mengambil nama class yang diakses user ?>
             <!-- ini adalah konten -->
         </div>
     </div>
