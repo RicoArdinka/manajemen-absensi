@@ -31,3 +31,15 @@ ul.menu li.active > a{
 #sidebar.tutup{
     margin-left: -250px;
 }
+
+a.dropdown-sidebar-colcom{
+    position: relative;
+}
+
+a.dropdown-sidebar-colcom::after{
+    position: absolute;
+    display: block;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
