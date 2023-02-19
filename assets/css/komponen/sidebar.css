@@ -43,3 +43,7 @@ a.dropdown-sidebar-colcom::after{
     top: 50%;
     transform: translateY(-50%);
 }
+
+a.dropdown-sidebar-colcom[aria-expanded='true']{
+    background: #111c27;
+}

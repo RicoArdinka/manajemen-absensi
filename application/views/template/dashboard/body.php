@@ -8,14 +8,14 @@
             <li><?= anchor('dashboard/absensi', 'Absensi'); ?></li>
             <li><?= anchor('dashboard/posisi', 'Posisi'); ?></li>
             <li><?= anchor('dashboard/departemen', 'Departemen'); ?></li>
-            <li><?= anchor('logout', 'Logout'); ?></li>
             <li>
                 <a href="#administrasi" aria-expanded="false" class="dropdown-toggle  dropdown-sidebar-colcom" data-toggle="collapse">Administrasi</a>
-
+                
                 <ul id="administrasi" class="collapse">
                     <li><?php echo anchor('dashboard/kategori', 'Kategori'); ?></li>
                 </ul>
             </li>
+            <li><?= anchor('logout', 'Logout'); ?></li>
         </ul>
     </nav>
 
