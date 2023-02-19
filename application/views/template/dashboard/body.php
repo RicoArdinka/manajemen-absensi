@@ -11,7 +11,7 @@
             <li>
                 <a href="#administrasi" aria-expanded="false" class="dropdown-toggle  dropdown-sidebar-colcom" data-toggle="collapse">Administrasi</a>
                 
-                <ul id="administrasi" class="collapse">
+                <ul id="administrasi" class="collapse menu">
                     <li><?php echo anchor('dashboard/kategori', 'Kategori'); ?></li>
                 </ul>
             </li>

@@ -47,3 +47,8 @@ a.dropdown-sidebar-colcom::after{
 a.dropdown-sidebar-colcom[aria-expanded='true']{
     background: #111c27;
 }
+
+ul ul li a{
+    background: #111c27;
+    padding-left: 40px !important;
+}
