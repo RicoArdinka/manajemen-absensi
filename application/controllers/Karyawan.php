@@ -1,6 +1,6 @@
 <?php
 
-class Dashboard extends CI_Controller {
+class Karyawan extends CI_Controller {
 
 	public function __construct() //digunakan untuk mengload pertama kali 
 	{
@@ -13,8 +13,15 @@ class Dashboard extends CI_Controller {
 	{
 		// $this->load->database(); sudah diwakilkan oleh autoload.php
 		// $this->load->model('Karyawan_model');
-		$data['title'] = "Dashboard";
+		$data['title'] = "Karyawan - xxxx";
 
 		$this->load->view('template/dashboard/body', $data);
 	}
+
+    public function read()
+    {
+        $data['title'] = "Karyawan - read";
+    
+        $this->load->view('template/dashboard/body', $data);
+    }
 }
